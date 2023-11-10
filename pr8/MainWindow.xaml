@@ -19,16 +19,16 @@
         </Grid.ColumnDefinitions>
         <Button x:Name="infobtn" Grid.Column="2" Content="О программе" HorizontalAlignment="Center" Height="25" Grid.Row="1" VerticalAlignment="Top" Width="130" Click="infoClick"/>
         <Button x:Name="exbtn" Grid.Column="2" Content="Выход" HorizontalAlignment="Center" Height="25" Grid.Row="1" VerticalAlignment="Center" Width="130" Click="ExitCLick"/>
-        <TextBox IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Center" Height="55" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="260"/>
-        <TextBox IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Center" Height="55" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="260"/>
+        <TextBox x:Name="tb1" IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Center" Height="55" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="260"/>
+        <TextBox x:Name="tb2" IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Center" Height="55" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="260"/>
         <Label Content="Имя" HorizontalAlignment="Left" Height="29" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="60"/>
         <Label Content="Фамилия" HorizontalAlignment="Left" Height="29" Grid.Row="1" Margin="133,10,0,0" VerticalAlignment="Top" Width="60"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Grid.Row="1" Margin="10,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="118"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Grid.Row="1" Margin="133,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="124"/>
-        <Button  Content="Ввести" HorizontalAlignment="Left" Height="31" Margin="150,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="90" ToolTip="Только если вы ввели все данные"/>
-        <RadioButton Content="Женщина" HorizontalAlignment="Left" Height="21" Margin="10,105,0,0" Grid.Row="1" VerticalAlignment="Top" Width="83"/>
-        <RadioButton Content="Мужчина" HorizontalAlignment="Left" Height="21" Margin="133,106,0,0" Grid.Row="1" VerticalAlignment="Top" Width="83"/>
+        <TextBox x:Name="tbname" HorizontalAlignment="Left" Height="30" Grid.Row="1" Margin="10,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="118"/>
+        <TextBox x:Name="tbsurname" HorizontalAlignment="Left" Height="30" Grid.Row="1" Margin="133,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="124"/>
+        <Button x:Name="resultbtn"  Content="Ввести" HorizontalAlignment="Left" Height="31" Margin="150,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="90" ToolTip="Только если вы ввели все данные" Click="resultClick"/>
+        <RadioButton x:Name="rbw" Content="Женщина" HorizontalAlignment="Left" Height="21" Margin="10,105,0,0" Grid.Row="1" VerticalAlignment="Top" Width="83"/>
+        <RadioButton IsChecked ="True" x:Name="rbm" Content="Мужчина" HorizontalAlignment="Left" Height="21" Margin="133,106,0,0" Grid.Row="1" VerticalAlignment="Top" Width="83"/>
         <Label Content="Количество детей" HorizontalAlignment="Left" Height="28" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="118"/>
-        <TextBox HorizontalAlignment="Left" Height="45" Margin="10,43,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="106"/>
+        <TextBox x:Name="tbchild" HorizontalAlignment="Left" Height="45" Margin="10,43,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="106"/>
     </Grid>
 </Window>

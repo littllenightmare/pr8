@@ -34,5 +34,33 @@ namespace pr8
         {
             this.Close();
         }
+
+        private async void resultClick(object sender, RoutedEventArgs e)
+        {
+            if (Int32.TryParse(tbchild.Text, out int a) == true & (tbname.Text != null) & tbsurname.Text != null)
+            {
+                string sex, name = tbname.Text, surname = tbsurname.Text, information; 
+                if (Convert.ToInt32(tbchild.Text) == 0)
+                {
+                    if (rbm.IsChecked == true)
+                    {
+                        worker work = new worker(name, surname, sex = "мужчина");
+                        information = work.info();
+                        tb1.Text = information;
+                    }
+                    else { worker work = new worker(name, surname, sex = "женщина"); information = work.info(); tb1.Text = information; }
+                }
+                else if (Convert.ToInt32(tbchild.Text) > 0)
+                {
+                    int child = Convert.ToInt32(tbchild.Text);
+                    if (rbm.IsChecked == true)
+                    {
+                        worker_dad worka = new worker_dad(name, surname, sex = "мужчина", child);
+                        information = worka.dad_info();
+                        tb1.Text = information;
+                    }
+                }
+            }
+        }
     }
 }
