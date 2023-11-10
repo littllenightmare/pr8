@@ -34,7 +34,11 @@ namespace pr8
         {
             this.Close();
         }
-
+        /// <summary>
+        /// У тебя короче не выводятся в текстобкс имя фамилия и пол, классы норм вроде, в этой функции ищи
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void resultClick(object sender, RoutedEventArgs e)
         {
             if (Int32.TryParse(tbchild.Text, out int a) == true & (tbname.Text != null) & tbsurname.Text != null)
