@@ -41,30 +41,66 @@ namespace pr8
         /// <param name="e"></param>
         private async void resultClick(object sender, RoutedEventArgs e)
         {
-            if (Int32.TryParse(tbchild.Text, out int a) == true & (tbname.Text != null) & tbsurname.Text != null)
+            if (Int32.TryParse(tbchild.Text, out int a) == true & Int32.TryParse(tbname.Text, out a) != true & Int32.TryParse(tbsurname.Text, out a) != true)
             {
-                string sex, name = tbname.Text, surname = tbsurname.Text, information; 
-                if (Convert.ToInt32(tbchild.Text) == 0)
+                string sex, name = tbname.Text, surname = tbsurname.Text, information;
+               if(tb1.Text != "")
                 {
-                    if (rbm.IsChecked == true)
+                    if (Convert.ToInt32(tbchild.Text) == 0)
                     {
-                        worker work = new worker(name, surname, sex = "мужчина");
-                        information = work.info();
-                        tb1.Text = information;
+                        if (rbm.IsChecked == true)
+                        {
+                            worker work = new worker(name, surname, sex = "мужчина");
+                            information = work.info();
+                            tb2.Text = information;
+                        }
+                        else { worker work = new worker(name, surname, sex = "женщина"); information = work.info(); tb2.Text = information; }
                     }
-                    else { worker work = new worker(name, surname, sex = "женщина"); information = work.info(); tb1.Text = information; }
-                }
-                else if (Convert.ToInt32(tbchild.Text) > 0)
+                    else if (Convert.ToInt32(tbchild.Text) > 0)
+                    {
+                        int child = Convert.ToInt32(tbchild.Text);
+                        if (rbm.IsChecked == true)
+                        {
+                            worker_dad worka = new worker_dad(name, surname, sex = "мужчина", child);
+                            information = worka.dad_info();
+                            tb2.Text = information;
+                        }
+                    }
+                } 
+                if (tb1.Text == "")
                 {
-                    int child = Convert.ToInt32(tbchild.Text);
-                    if (rbm.IsChecked == true)
+                    if (Convert.ToInt32(tbchild.Text) == 0)
                     {
-                        worker_dad worka = new worker_dad(name, surname, sex = "мужчина", child);
-                        information = worka.dad_info();
-                        tb1.Text = information;
+                        if (rbm.IsChecked == true)
+                        {
+                            worker work = new worker(name, surname, sex = "мужчина");
+                            information = work.info();
+                            tb1.Text = information;
+                        }
+                        else { worker work = new worker(name, surname, sex = "женщина"); information = work.info(); tb1.Text = information; }
+                    }
+                    else if (Convert.ToInt32(tbchild.Text) > 0)
+                    {
+                        int child = Convert.ToInt32(tbchild.Text);
+                        if (rbm.IsChecked == true)
+                        {
+                            worker_dad worka = new worker_dad(name, surname, sex = "мужчина", child);
+                            information = worka.dad_info();
+                            tb1.Text = information;
+                        }
                     }
                 }
+                
             }
+        }
+
+        private void ClearClick(object sender, RoutedEventArgs e)
+        {
+            tb1.Text = "";
+            tb2.Text = "";
+            tbchild.Text = "0";
+            tbname.Text = "";
+            tbsurname.Text = "";
         }
     }
 }
