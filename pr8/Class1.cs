@@ -45,7 +45,7 @@ namespace pr8
         /// </summary>
         /// <param name="other">второй работник, с которым сравнивают</param>
         /// <returns>1 или 0</returns>
-        public int CompareTo( worker other)
+        public int CompareTo(worker other)
         {
          if(other.Surname == Surname) return 1;
          else return 0;
@@ -82,7 +82,11 @@ namespace pr8
         {
             worker_dad wd = new worker_dad(Name, Surname, Sex, Children);
             return wd;
-        }  
-
+        }
+        public int CompareTo(worker_dad other)
+        {
+            if (other.Surname == Surname) return 1;
+            else return 0;
+        }
     }
 }
